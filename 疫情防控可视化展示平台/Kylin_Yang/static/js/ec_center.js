@@ -19,6 +19,7 @@ var ec_center_option = {
         textStyle: {
             fontSize: 8,
         },
+        //图例
         splitList: [{ start: 1,end: 9 },
             {start: 10, end: 99 }, 
 			{ start: 100, end: 999 },

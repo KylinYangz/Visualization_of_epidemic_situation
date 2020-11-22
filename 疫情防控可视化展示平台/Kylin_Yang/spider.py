@@ -48,26 +48,7 @@ def get_tencent_data():
     data_his = json.loads(res_his['data'])
 
     history = {}  # 历史数据
-    #     for i in data_all["chinaDayList"]:
-    #         ds = "2020." + i["date"]
-    #         tup = time.strptime(ds, "%Y.%m.%d")
-    #         ds = time.strftime("%Y-%m-%d", tup)  # 改变时间格式,不然插入数据库会报错，数据库是datetime类型
-    #         confirm = i["confirm"]
-    #         suspect = i["suspect"]
-    #         heal = i["heal"]
-    #         dead = i["dead"]
-    #         history[ds] = {"confirm": confirm, "suspect": suspect, "heal": heal, "dead": dead}
-    #     for i in data_all["chinaDayAddList"]:
-    #         ds = "2020." + i["date"]
-    #         tup = time.strptime(ds, "%Y.%m.%d")
-    #         ds = time.strftime("%Y-%m-%d", tup)
-    #         confirm = i["confirm"]
-    #         suspect = i["suspect"]
-    #         heal = i["heal"]
-    #         dead = i["dead"]
-    #         history[ds].update({"confirm_add": confirm, "suspect_add": suspect, "heal_add": heal, "dead_add": dead})
 
-    # 通过上面的代码肯定不行了，里面只有当日详细数据，修改也很简单，改一下循环遍历的数据源即可：++++
     for i in data_his["chinaDayList"]:
         ds = "2020." + i["date"]
         tup = time.strptime(ds, "%Y.%m.%d")

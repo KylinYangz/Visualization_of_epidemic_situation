@@ -2,14 +2,15 @@ from flask import Flask
 from flask import request
 from flask import render_template
 from flask import jsonify
+from flask import Blueprint,send_file
 import utils
 
 app = Flask(__name__)
 
-
 @app.route('/')
 def hello_world():
     return render_template("main.html")
+
 
 @app.route("/c1")
 def get_c1_data():
@@ -55,9 +56,6 @@ def get_r1_data():
         city.append(k)
         confirm.append(int(v))
     return jsonify({"city": city, "confirm": confirm})
-
-
-@app.route("/r2")
 
 
 @app.route("/time")
